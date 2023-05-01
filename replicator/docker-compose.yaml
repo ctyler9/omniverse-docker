@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  omniverse-replicator:
+    image: nvcr.io/nvidia/omniverse-replicator:1.6.3
+    container_name: omniverse-replicator
+    entrypoint: /bin/bash
+    volumes:
+      - /home/ctyler/work/omniverse/replicator:/replicator-code
+      - /home/ctyler/omni.replicator_out/_output:/root/omni.replicator_out/_output
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    tty: true 

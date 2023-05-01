@@ -1,0 +1,1 @@
+docker run --gpus all -v /home/ctyler/work/omniverse/replicator:/replicator-code -v /home/ctyler/omni.replicator_out/_output:/root/omni.replicator_out/_output --entrypoint /bin/bash -it  nvcr.io/nvstaging/omniverse-replicator:1.6.3
